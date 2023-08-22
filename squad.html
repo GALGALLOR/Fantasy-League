@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Squad - Fantasy Premier League</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    /* ... Existing styles ... */
+
+.squad-section {
+    margin-bottom: 40px;
+}
+
+.soccer-field {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 0;
+    padding-bottom: 66.6%; /* Aspect ratio for soccer field */
+    background-color: #4caf50; /* Green color for the field */
+    border: 2px solid #333333;
+    overflow: hidden;
+}
+
+.center-circle,
+.center-spot,
+.penalty-area,
+.penalty-spot,
+.goal {
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.center-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-spot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.penalty-area {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.penalty-area.home {
+    left: 0;
+    top: calc(50% - 150px);
+}
+
+.penalty-area.away {
+    right: 0;
+    top: calc(50% - 150px);
+}
+
+.penalty-spot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    left: 50%;
+    top: calc(50% - 3px);
+    transform: translateX(-50%);
+}
+
+.goal {
+    width: 20px;
+    height: 150px;
+    background-color: white;
+    left: 0;
+    top: calc(50% - 75px);
+    border-radius: 0 10px 10px 0;
+}
+
+.goal.away {
+    left: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Player positions */
+.player {
+    position: absolute;
+    background-color: #ff5722; /* Orange color for players */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* Player positions */
+.player-1 { left: 50%; top: 10%; transform: translateX(-50%); }
+.player-2 { left: 20%; top: 30%; }
+/* ... Existing styles ... */
+
+/* Player positions */
+.player {
+    position: absolute;
+    background-color: #ff5722; /* Orange color for players */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+/* Goalkeeper */
+.player-goalkeeper { left: 50%; top: 5%; transform: translateX(-50%); background-color: #00bcd4; }
+
+/* Defenders */
+.player-defender:nth-child(1) { left: 20%; top: 10%; background-color: #4caf50; }
+.player-defender:nth-child(2) { left: 80%; top: 10%; background-color: #4caf50; }
+.player-defender:nth-child(3) { left: 20%; top: 60%; background-color: #4caf50; }
+.player-defender:nth-child(4) { left: 80%; top: 60%; background-color: #4caf50; }
+
+/* Midfielders */
+.player-midfielder:nth-child(1) { left: 40%; top: 40%; background-color: #ffc107; }
+.player-midfielder:nth-child(2) { left: 60%; top: 40%; background-color: #ffc107; }
+.player-midfielder:nth-child(3) { left: 40%; top: 75%; background-color: #ffc107; }
+.player-midfielder:nth-child(4) { left: 60%; top: 75%; background-color: #ffc107; }
+.player-midfielder:nth-child(5) { left: 50%; top: 50%; background-color: #ffc107; }
+
+/* Forwards */
+.player-forward:nth-child(1) { left: 20%; top: 35%; background-color: #e91e63; }
+.player-forward:nth-child(2) { left: 80%; top: 35%; background-color: #e91e63; }
+.player-forward:nth-child(3) { left: 50%; top: 25%; background-color: #e91e63; }
+.player-forward:nth-child(4) { left: 30%; top: 70%; background-color: #e91e63; }
+.player-forward:nth-child(5) { left: 70%; top: 70%; background-color: #e91e63; }
+
+/* Additional styles for better visual appeal */
+/* Adjust as per your design */
+
+/* ... Add styles for other players ... */
+
+/* Additional styles for better visual appeal */
+/* Adjust as per your design */
+
+</style>
+<body>
+    <header>
+        <h1>My Squad</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="squad.html">My Squad</a></li>
+                <li><a href="transfers.html">Transfers</a></li>
+                <li><a href="leagues.html">Leagues</a></li>
+                <li><a href="logout.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>My Squad</h2>
+        <section class="squad-section">
+            <div class="soccer-field">
+                <div class="center-circle"></div>
+                <div class="center-spot"></div>
+                <div class="penalty-area home"></div>
+                <div class="penalty-area away"></div>
+                <div class="penalty-spot home"></div>
+                <div class="penalty-spot away"></div>
+                <div class="goal home"></div>
+                <div class="goal away"></div>
+                <div class="player player-1">Player 1</div>
+                <div class="player player-2">Player 2</div>
+                <div class="player player-goalkeeper">GK</div>
+            <div class="player player-defender">DEF</div>
+            <div class="player player-defender">DEF</div>
+            <div class="player player-midfielder">MID</div>
+            <div class="player player-midfielder">MID</div>
+            <div class="player player-midfielder">MID</div>
+            <div class="player player-forward">FWD</div>
+            <div class="player player-forward">FWD</div>
+            <div class="player player-forward">FWD</div>
+            <div class="player player-forward">FWD</div>
+            <div class="player player-forward">FWD</div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Fantasy Premier League</p>
+    </footer>
+</body>
+</html>

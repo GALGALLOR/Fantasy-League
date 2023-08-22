@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Fantasy Premier League</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    /* ... Existing styles ... */
+
+.dashboard-section {
+    margin-bottom: 40px;
+}
+
+.dashboard-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.fixtures-list, .leagues-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.fixtures-list li, .leagues-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 5px;
+}
+
+.fixture-date {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.league-rank {
+    font-weight: bold;
+}
+
+.points-summary p {
+    margin: 5px 0;
+}
+
+/* Additional styles for better visual appeal */
+/* Adjust as per your design */
+
+</style>
+<body>
+    <header>
+        <h1>Welcome, [Username]</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="squad.html">My Squad</a></li>
+                <li><a href="transfers.html">Transfers</a></li>
+                <li><a href="leagues.html">Leagues</a></li>
+                <li><a href="logout.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome, [Username]</h2>
+        <section class="dashboard-section">
+            <h3>Upcoming Fixtures</h3>
+            <ul class="fixtures-list">
+                <li>
+                    <span class="fixture-date">Aug 28</span>
+                    <span class="fixture-match">Arsenal vs. Chelsea</span>
+                </li>
+                <li>
+                    <span class="fixture-date">Aug 29</span>
+                    <span class="fixture-match">Manchester United vs. Liverpool</span>
+                </li>
+                <!-- More fixtures -->
+            </ul>
+        </section>
+        <section class="dashboard-section">
+            <h3>Your Points</h3>
+            <div class="points-summary">
+                <p class="total-points">Total Points: 520</p>
+                <p class="gameweek-points">Gameweek Points: 45</p>
+            </div>
+        </section>
+        <section class="dashboard-section">
+            <h3>Top Leagues</h3>
+            <ul class="leagues-list">
+                <li>
+                    <span class="league-name">Premier League</span>
+                    <span class="league-rank">1st</span>
+                </li>
+                <li>
+                    <span class="league-name">Friends League</span>
+                    <span class="league-rank">5th</span>
+                </li>
+                <!-- More leagues -->
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Fantasy Premier League</p>
+    </footer>
+</body>
+</html>
